@@ -3,7 +3,7 @@ FROM ubuntu:24.10 as dev
 # Install required tools and dependencies.
 RUN \
 apt update && \
-apt install \
+apt install -y \
 git \
 cmake \
 g++ \
@@ -32,8 +32,8 @@ libqt6networkauth6-dev  \
 libqt6statemachine6  \
 libqt6svg6-dev  \
 linguist-qt6 && \
-apt upgrade && \
-apt autoremove && \
+apt upgrade -y && \
+apt autoremove -y && \
 apt clean
 
 RUN mkdir /development
